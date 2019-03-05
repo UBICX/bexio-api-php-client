@@ -179,4 +179,15 @@ class Invoice extends Bexio {
     {
         return $this->client->get('kb_invoice/' . $id . '/payment/' . $paymentId, []);
     }
+    /**
+     * Add new invoice Payment
+     * 
+     * @param $id (invoice id)
+     * @param array $params
+     * @return mixed
+     */
+    public function createInvoicePayment($id,$params = [])
+    {
+        return $this->client->post('kb_invoice/'. $id . '/payment/', $params);
+    }
 }
